@@ -1,2 +1,3 @@
 .deploy
 config/settings.json
+pm2-meteor.json
