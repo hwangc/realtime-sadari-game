@@ -1,0 +1,44 @@
+<template name="sadariRegister">
+  <div class="ui sadari-register center aligned grid">
+    <div class="column">
+      <h2 class="ui teal image header">
+        <div class="content">
+          사다리 클럽 회원 가입
+        </div>
+      </h2>
+      <form class="ui large form">
+        <div class="ui stacked segment">
+          <div class="field {{errorClass 'email'}}">
+            <div class="ui left icon input">
+              <i class="at icon"></i>
+              <input type="text" name="registerEmail" placeholder="이메일">
+            </div>
+          </div>
+          <div class="field {{errorClass 'password'}}">
+            <div class="ui left icon input">
+              <i class="lock icon"></i>
+              <input type="password" name="registerPassword" placeholder="비밀번호">
+            </div>
+          </div>
+          <div class="field {{errorClass 'username'}}">
+            <div class="ui left icon input">
+              <i class="user icon"></i>
+              <input type="text" name="registerUserName" placeholder="사용자 이름(3자 이상 10자 이하)">
+            </div>
+          </div>
+          <button class="ui fluid large teal submit button" type="submit">회원가입</button>
+        </div>
+
+        <div class="ui error message">
+          {{#each errorMessages}}
+            {{this}}
+          {{/each}}
+        </div>
+      </form>
+
+      <div class="ui message">
+        가입 하셨나요? <a href="/login">로그인</a>
+      </div>
+    </div>
+  </div>
+</template>

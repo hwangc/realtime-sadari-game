@@ -1,0 +1,33 @@
+<template name="sadariInit">
+  <div class="segment sadari-init">
+    <form class="ui form segment">
+      <h3 class="ui center aligned header">사다리 게임</h3>
+
+      <div class="two fields">
+        <div class="required field">
+          <label>방 이름</label>
+          <input placeholder="방 이름 3자 이상" name="roomname" type="text" maxlength="50">
+        </div>
+        <div class="required field">
+          <label>참여 인원</label>
+          <div class="ui left icon input users">
+            <input type="number" placeholder="2명 이상 20명 이하 입력" name="players">
+            <i class="add user icon"></i>
+          </div>
+        </div>
+      </div>
+      <div class="required field">
+        <label>방 소개</label>
+        <textarea name="roomdesc" placeholder="방 소개 150자 이내" rows="3"></textarea>
+      </div>
+      <div class="inline required field">
+        <div class="ui checkbox">
+          <input name="terms" type="checkbox" checked>
+          <label>사행성 게임을 하지 않습니다.</label>
+        </div>
+      </div>
+
+      <button class="ui blue submit button">만들기</button>
+    </form>
+  </div>
+</template>

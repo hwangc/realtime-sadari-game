@@ -1,0 +1,11 @@
+<template name="drawBoard">
+  <div id="ladderContainer" class="ui blurring">
+    <svg id="ladderDraw" width="0" height="0" >
+    </svg>
+    {{#unless gameStage "started" "end"}}
+    <div class="sadari-start-dimmer">
+      {{> sadariDimmer}}
+    </div>
+    {{/unless}}
+  </div>
+</template>

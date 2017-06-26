@@ -1,0 +1,28 @@
+{
+  "appName": "sadari",
+  "appLocation": {
+    "local": "/Volumes/HwangCHD/Users/xxxxxxxxxxxxxxxxxxxxxxxx"
+  },
+  "meteorSettingsLocation": "/Volumes/HwangCHD/Users/xxxxxxxxxxxxxxxxxxxxxxxx/config/settings.json",
+  "meteorSettingsInRepo": false,
+  "prebuildScript": "",
+  "meteorBuildFlags": "--architecture os.linux.x86_64",
+  "env": {
+    "ROOT_URL": "http://localhost",
+    "PORT": 3003,
+    "MONGO_URL": "mongodb://localhost:27017/sadari"
+  },
+  "server": {
+    "host": "HwangC.com",
+    "username": "hwangc",
+    "password": "xxxxxxxxxx",
+    "deploymentDir": "/var/www",
+    "loadProfile": "",
+    "nvm": {
+      "bin": "~/.nvm/nvm.sh",
+      "use": "v0.10.40"
+    },
+    "exec_mode": "cluster_mode",
+    "instances": 1
+  }
+}

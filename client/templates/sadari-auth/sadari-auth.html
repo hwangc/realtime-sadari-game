@@ -1,0 +1,19 @@
+<template name="sadariAuth">
+  {{#if currentUser}}
+    <div class="ui icon message">
+      <i class="comment icon"></i>
+      <div class="content">
+        <div class="header">
+          이미 로그인 중입니다.
+        </div>
+        <div class="ui hidden divider"></div>
+        <a href="{{pathFor route='sadari.Main'}}" class="ui labeled positive icon button">
+          <i class="left arrow icon"></i>
+          홈
+        </a>
+      </div>
+    </div>
+  {{else}}
+    {{> yield "sadariAuth"}}
+  {{/if}}
+</template>

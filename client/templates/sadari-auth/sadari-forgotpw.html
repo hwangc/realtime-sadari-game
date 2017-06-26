@@ -1,0 +1,51 @@
+<template name="sadariForgotPw">
+  <div class="ui sadari-forgotpw center aligned grid">
+    <div class="column">
+      <h2 class="ui teal image header">
+        <div class="content">
+          사다리 클럽 비밀번호 찾기
+        </div>
+      </h2>
+      <form class="ui large form">
+        <div class="ui stacked segment">
+          <div class="field {{errorClass 'email'}}">
+            <div class="ui left icon input">
+              <i class="at icon"></i>
+              <input type="text" name="loginEmail" placeholder="이메일">
+            </div>
+          </div>
+          <button class="ui fluid large teal submit button" type="submit">비밀번호 찾기</button>
+        </div>
+
+        <div class="ui error message">
+          {{#each errorMessages}}
+            {{this}}
+          {{/each}}
+        </div>
+      </form>
+
+      <div class="ui message">
+        <ul class="list">
+          <li>새로 오셨나요? <a href="/register">가입하기</a></li>
+          <li><a href="/login">로그인</a> 돌아가기</li>
+        </ul>
+      </div>
+      <div class="ui icon hidden email sending message">
+        <i class="notched circle loading icon"></i>
+        <div class="content">
+          <div class="header">
+            전송 중..
+          </div>
+          <p>이메일을 보내는 중입니다. 잠시만 기다리세요.</p>
+        </div>
+      </div>
+      <div class="ui positive hidden email sent message">
+        <i class="close icon"></i>
+        <div class="header">
+          이메일 발송 완료.
+        </div>
+        <p>이메일에 전달된 링크를 클릭하여 비밀번호를 변경하세요.</p>
+      </div>
+    </div>
+  </div>
+</template>

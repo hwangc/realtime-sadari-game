@@ -1,0 +1,9 @@
+<template name="sadariLayout">
+  <div class="ui raised very padded text container sadari-main">
+    {{> sadariMenu}}
+    {{> yield "sadariMain"}}
+  </div>
+  {{> sadariDeleteError}}
+  <div class="ui hidden divider"></div>
+  <div class="ui hidden divider"></div>
+</template>

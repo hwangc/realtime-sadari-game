@@ -1,0 +1,17 @@
+<template name="boardRoom">
+  {{> drawBoard}}
+  {{> drawStart}}
+
+  {{#each ladderSet}}
+    <div class="ui segment player board-column">
+      <div id="{{playerID}}-player" class="ui left icon fluid input sadari-player">
+        <input type="text" value="{{playerName}}" placeholder="대기중" disabled>
+        <i class="{{#if isCom}}laptop{{else}}user{{/if}} {{isPlayerOn}} icon"></i>
+      </div>
+      <div id="{{playerID}}-prize" class="ui left icon input sadari-prize">
+        <input type="text" value="{{prizeName}}" placeholder="" {{prizeDisabled}} maxlength="20" >
+        <i class="gift {{isPrizeOn}} icon"></i>
+      </div>
+    </div>
+  {{/each}}
+</template>

@@ -1,0 +1,20 @@
+.sadari-rooms {
+	.card {
+		border-bottom: 1px solid rgba(177, 177, 177, 0.4);
+		&.is-done {
+	    background-color: #f2e9eb;
+	    background-image: -webkit-linear-gradient(left top, #ffffff, #f2e9eb);
+	    background-image: linear-gradient(to right bottom, #ffffff, #f2e9eb);
+		}
+		.remove.icon {
+			cursor: pointer;
+		}
+		>.content {
+			 > .header:not(.ui){
+				 @media screen and (max-width:768px) {
+ 					margin-top: 1.5em !important;
+ 				}
+			 }
+		}
+	}
+}

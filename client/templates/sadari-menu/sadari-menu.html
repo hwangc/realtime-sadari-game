@@ -1,0 +1,26 @@
+<template name="sadariMenu">
+  <div class="ui secondary pointing menu sadari-menu">
+    <a href="{{pathFor route='sadari.Main'}}" class="item {{active "Main"}} home">
+      홈
+    </a>
+    <a href="{{#if currentUser}}{{pathFor route='sadari.MyRooms' data=getUsername}}{{else}}{{pathFor route='sadari.Login' query='redirectTo=sadari.Main'}}{{/if}}" class="item {{active "MyRooms"}} myGames">
+      내 사다리 {{#if currentUser}}{{#if Template.subscriptionsReady}}<div class="ui teal mini label">{{getPublishedCount 'roomCounterOfTheUser'}}</div>{{/if}}{{/if}}
+    </a>
+    <div class="right menu">
+      {{#unless loggingIn}}
+        {{#if currentUser}}
+          <a class="ui item {{active "Logout"}} logout">{{username}} 로그아웃</a>
+        {{else}}
+          <a class="ui item {{active "Login"}} login">로그인</a>
+        {{/if}}
+      {{else}}
+        <a class="ui item loggingIn">...</a>
+      {{/unless}}
+      <!-- <div class="item">
+        <div class="ui icon">
+          <i class="search link icon"></i>
+        </div>
+      </div> -->
+    </div>
+  </div>
+</template>

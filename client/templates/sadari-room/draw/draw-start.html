@@ -1,0 +1,11 @@
+<template name="drawStart">
+  <div id="resultContainer">
+    <svg id="resultDraw" width="0" height="0" >
+    </svg>
+    {{#if gameStage "end"}}
+    <div class="sadari-end-dimmer">
+      {{> sadariDimmer}}
+    </div>
+    {{/if}}
+  </div>
+</template>

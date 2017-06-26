@@ -1,0 +1,26 @@
+<template name="404">
+  <div class="ui raised very padded text container sadari-main">
+    <div class="ui hidden divider"></div>
+    <h1 class="ui center aligned red inverted header">404 에러</h1>
+    <div class="ui hidden divider"></div>
+    <div class="ui icon message">
+      <i class="warning sign icon"></i>
+      <div class="content">
+        <div class="header">
+          찾으시는 페이지가 없습니다.
+        </div>
+        <p>URL 주소를 다시 한번 확인해보세요.</p>
+        <div class="ui buttons">
+          <a href="{{pathFor route='sadari.Main'}}" class="ui labeled primary icon button">
+            <i class="left arrow icon"></i>
+            홈
+          </a>
+          <a href="{{pathFor route='sadari.Login' query='redirectTo=sadari.Main'}}" class="ui right labeled positive icon button">
+            <i class="right arrow icon"></i>
+            로그인
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>

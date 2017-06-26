@@ -1,0 +1,58 @@
+<template name="roomUsers">
+  <div class="ui play guest accordion">
+    {{#if players}}
+    <h3 class="active title">게임석<i class="dropdown icon"></i></h3>
+    {{/if}}
+    <div class="active content">
+      <div class="ui relaxed celled list">
+        {{#each players}}
+          <div class="item ready">
+            <div class="user avatar">
+              <i class="ui user large green icon"></i>
+            </div>
+            <div class="content">
+              <div class="header">{{username}}</div>
+              {{#if sitNum}}
+              <div class="ui sub header">좌석:{{sitNum}}</div>
+              {{/if}}
+            </div>
+            <div class="extra">
+              {{#unless gameStage "end"}}
+              <div class="ready">준비 완료</div>
+              {{#if isCreator}}
+              <div class="creator">방장</div>
+              {{/if}}
+              {{/unless}}
+            </div>
+          </div>
+        {{/each}}
+      </div>
+    </div>
+  </div>
+  <div class="ui online guest accordion">
+    {{#if observers}}
+    <h3 class="active title">관전석<i class="dropdown icon"></i></h3>
+    {{/if}}
+    <div class="active content">
+      <div class="ui relaxed celled list">
+        {{#each observers}}
+          <div class="item">
+            <div class="user avatar">
+              <i class="ui user large grey icon"></i>
+            </div>
+            <div class="content">
+              <div class="header">{{username}}</div>
+            </div>
+            <div class="extra">
+              {{#unless gameStage "end"}}
+              {{#if isCreator}}
+              <div class="creator">방장</div>
+              {{/if}}
+              {{/unless}}
+            </div>
+          </div>
+        {{/each}}
+      </div>
+    </div>
+  </div>
+</template>

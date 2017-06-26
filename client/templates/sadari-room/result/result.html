@@ -1,0 +1,29 @@
+<template name="roomResult">
+  <div class="ui play result accordion">
+    {{#if result}}
+    <h3 class="active title">경기 결과<i class="dropdown icon"></i></h3>
+    {{/if}}
+    <div class="active content">
+      <div class="ui toggle checkbox">
+        <input type="checkbox" name="showWinner">
+        <label>당첨자만 보기</label>
+      </div>
+      <div class="ui relaxed celled list">
+      {{#each result}}
+        <div class="item {{#if prize}}winner{{else}}looser{{/if}}">
+          <div class="user avatar">
+            <i class="ui {{#if isCom}}laptop grey{{else}}user green{{/if}} large icon"></i>
+          </div>
+          <div class="content">
+            <div class="header">{{player}}</div>
+            <div class="ui sub header">좌석:{{sitNum}}</div>
+          </div>
+          <div class="extra">
+            <div class="description">{{#if prize}}당첨: {{prize}}{{else}}꽝!{{/if}}</div>
+          </div>
+        </div>
+      {{/each}}
+      </div>
+    </div>
+  </div>
+</template>

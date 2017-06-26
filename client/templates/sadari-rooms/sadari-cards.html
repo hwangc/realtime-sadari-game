@@ -1,0 +1,40 @@
+<template name="sadariCards">
+  {{> pagesNav}}
+  <div class="ui three doubling stackable cards sadari-rooms">
+  {{> pages}}
+  </div>
+  {{> pagesNav}}
+</template>
+
+<template name="sadariCard">
+  <div class="ui card">
+    {{#with gameStatus}}
+      <div class="ui top attached {{statusColor}} label">
+        <i class="{{statusIcon}} icon"></i> {{statusMsg}}
+        {{#if isCreator}}
+        <i class="right floated remove white icon"></i>
+        {{/if}}
+      </div>
+    {{/with}}
+    <div class="content">
+      <h1 class="header">
+        <a href="{{pathFor route='sadari.RoomByID' data=getRoomByID}}" class="room-title">{{title}}</a>
+      </h1>
+      <div class="meta">
+        <span class="right floated time">{{createdDate}}</span>
+        <span class="category"><i class="users icon"></i> {{playersNum}} 인용</span>
+      </div>
+      <div class="description">
+        <p>{{description}}</p>
+      </div>
+    </div>
+    <div class="extra content">
+      <a href="{{pathFor route='sadari.MyRooms' data=getUsername}}" class="right floated author">
+        <i class="user icon"></i> {{creator}}
+      </a>
+      <div class="left floated">
+        {{enteredUsers roomID=_id}} 접속중
+      </div>
+    </div>
+  </div>
+</template>

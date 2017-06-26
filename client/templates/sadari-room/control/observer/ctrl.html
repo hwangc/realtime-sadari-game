@@ -1,0 +1,45 @@
+<template name="observerCtrl">
+  <form class="ui fluid form control-footer">
+  {{#if gameStage "init"}}
+    <div class="field sadari-game-no-sit">
+      <div class="ui pointing below red basic label">
+        모든 자리가 찼습니다.
+      </div>
+      <div class="ui right labeled icon primary tiny disabled button">
+        <i class="checkmark icon"></i>
+        착석대기
+      </div>
+    </div>
+  {{/if}}
+  {{#if gameStage "ready"}}
+    <div class="field sadari-game-no-sit">
+      <div class="ui pointing below red basic label">
+        모든 자리가 찼습니다.
+      </div>
+      <div class="ui right labeled icon primary tiny disabled button">
+        <i class="checkmark icon"></i>
+        착석대기
+      </div>
+    </div>
+  {{/if}}
+  {{#if gameStage "start"}}
+    <div class="field sadari-game-no-sit">
+      <div class="ui pointing below red basic label">
+        모든 자리가 찼습니다.
+      </div>
+      <div class="ui right labeled icon primary tiny disabled button">
+        <i class="checkmark icon"></i>
+        착석대기
+      </div>
+    </div>
+  {{/if}}
+  {{#if gameStage "started"}}
+  <div class="field sadari-game-stared">
+  </div>
+  {{/if}}
+  {{#if gameStage "end"}}
+  <div class="field sadari-game-end">
+  </div>
+  {{/if}}
+  </form>
+</template>

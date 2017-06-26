@@ -1,0 +1,23 @@
+<template name="sadariRoom">
+  {{#if currentUser}}
+  <div class="sadari-room">
+    <div class="ui left wide inverted sidebar vertical menu chat">
+      {{> commonChatWindow}}
+      {{> commonChatInput}}
+    </div>
+    <div class="pusher">
+      <div class="ui center aligned segment control board-column">
+        {{> commonMenu}}
+        {{> commonConnect}}
+        {{> roomResult}}
+        {{> roomUsers}}
+        {{> Template.dynamic template=footerTemplate }}
+      </div>
+      <div class="ui horizontal segments board-draw" style="-webkit-overflow-scrolling: touch;">
+        {{> boardRoom }}
+      </div>
+    </div>
+  </div>
+  {{> sadariIdleSiteLeave}}
+  {{/if}}
+</template>

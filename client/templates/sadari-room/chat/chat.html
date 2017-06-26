@@ -1,0 +1,63 @@
+<template name="commonChatWindow">
+  <div class="ui minimal comments chat">
+    <div class="ui medium center aligned dividing inverted header">
+      사다리 채팅
+      <i class="close icon"></i>
+    </div>
+    <div class="chat window">
+      {{#if Template.subscriptionsReady}}
+  	    {{#if hasMoreChats}}
+  				<div class="ui segment inverted grid">
+  					<div class="twelve wide column">
+  						<button class="ui fluid positive button load-more">
+  							더 보기
+  						</button>
+  					</div>
+  				  <div class="four wide column">
+  						<button class="ui fluid icon button go-down">
+  							<i class="arrow circle down icon"></i>
+  						</button>
+  				  </div>
+  				</div>
+  			{{else}}
+  				<div class="ui segment inverted grid">
+  					<div class="sixteen wide column">
+  						<button class="ui fluid icon button go-down">
+  							<i class="arrow circle down icon"></i>
+                처음
+  						</button>
+  					</div>
+  				</div>
+  	    {{/if}}
+      {{else}}
+  	    {{> sadariLoadMore}}
+  	  {{/if}}
+      {{#each message}}
+        {{#if announce}}
+          <span class="ui horizontal divider header user-in-out">
+            <p>{{text}}</p>
+          </span>
+        {{else}}
+          <div class="comment {{role}}">
+            {{#unless me}}
+            <a class="avatar">
+              <i class="ui user large green icon"></i>
+            </a>
+            {{/unless}}
+            <div class="content">
+              {{#unless me}}
+              <a class="author">{{author}}</a>
+              {{/unless}}
+              <div class="text">
+                {{text}}
+                <div class="metadata">
+                  <span class="date">{{createdDate}}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        {{/if}}
+      {{/each}}
+    </div>
+  </div>
+</template>

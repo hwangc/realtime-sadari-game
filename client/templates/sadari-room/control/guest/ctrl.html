@@ -1,0 +1,66 @@
+<template name="guestCtrl">
+  <form class="ui fluid form control-footer">
+    {{#if gameStage "init"}}
+    <div class="field prize-share">
+      <div class="ui right pointing red basic label">
+        방장의 상품 입력을 기다리고 있습니다. <i class="notched circle loading small icon"></i>
+      </div>
+    </div>
+    {{else}}
+      {{#if gameStage "ready"}}
+        {{#unless isReady}}
+          <div class="field sadari-game-ready">
+            <div class="ui pointing below green basic label">
+              착석 버튼을 누르면 좌석이 랜덤하게 선택됩니다.
+            </div>
+            <button class="ui right labeled icon grey button">
+              <i class="square outline icon"></i>
+              착석
+            </button>
+          </div>
+        {{else}}
+          <div class="field sadari-game-wait">
+            <div class="ui pointing below green basic label">
+              방장이 시작 버튼을 누르면 게임이 진행됩니다.
+            </div>
+            <button class="ui right labeled icon primary tiny disabled button">
+              <i class="checkmark icon"></i>
+              착석완료
+            </button>
+          </div>
+        {{/unless}}
+      {{/if}}
+      {{#if gameStage "start"}}
+        {{#unless isReady}}
+          <div class="field sadari-game-ready">
+            <div class="ui pointing below green basic label">
+              착석 버튼을 누르면 좌석이 랜덤하게 선택됩니다.
+            </div>
+            <button class="ui right labeled icon grey button">
+              <i class="square outline icon"></i>
+              착석
+            </button>
+          </div>
+        {{else}}
+          <div class="field sadari-game-wait">
+            <div class="ui pointing below green basic label">
+              방장이 시작 버튼을 누르면 게임이 진행됩니다.
+            </div>
+            <button class="ui right labeled icon primary tiny disabled button">
+              <i class="checkmark icon"></i>
+              착석완료
+            </button>
+          </div>
+        {{/unless}}
+      {{/if}}
+      {{#if gameStage "started"}}
+      <div class="field sadari-game-stared">
+      </div>
+      {{/if}}
+      {{#if gameStage "end"}}
+      <div class="field sadari-game-end">
+      </div>
+      {{/if}}
+    {{/if}}
+  </form>
+</template>

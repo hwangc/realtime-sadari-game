@@ -1,0 +1,88 @@
+<template name="creatorCtrl">
+  <form class="ui fluid form control-footer">
+    {{#if gameStage "init"}}
+    <div class="field prize-share">
+      <div class="ui error small message">
+        입력된 상품이 없습니다.
+      </div>
+      <div class="ui pointing below red basic label">
+        오른쪽 사다리 아래 상품을 하나 이상 입력 후 전송 버튼을 눌러주세요.
+      </div>
+      <button class="ui right labeled icon positive button">
+        <i class="right arrow icon"></i>
+          전송
+      </button>
+    </div>
+    {{else}}
+      {{#if isReady}}
+        {{#if gameStage "ready"}}
+        <div class="field sadari-game-start">
+          <div class="ui pointing below green basic label">
+            시작을 누르면 게임이 진행됩니다.
+          </div>
+          <button class="ui right labeled icon positive button">
+            <i class="play icon"></i>
+            시작
+          </button>
+        </div>
+        {{/if}}
+        {{#if gameStage "start"}}
+        <div class="field sadari-game-start">
+          <div class="ui pointing below green basic label">
+            시작을 누르면 게임이 진행됩니다.
+          </div>
+          <button class="ui right labeled icon positive button">
+            <i class="play icon"></i>
+            시작
+          </button>
+        </div>
+        {{/if}}
+        {{#if gameStage "started"}}
+        <div class="field sadari-game-started">
+        </div>
+        {{/if}}
+        {{#if gameStage "end"}}
+        <div class="field sadari-game-end">
+        </div>
+        {{/if}}
+      {{else}}
+        {{#if gameStage "ready"}}
+        <div class="field prize-share">
+          <div class="ui error small message">
+            입력된 상품이 없습니다.
+          </div>
+          <div class="ui pointing below red basic label">
+            오른쪽 사다리 아래 상품을 하나 이상 입력 후 전송 버튼을 눌러주세요.
+          </div>
+          <button class="ui right labeled icon positive button">
+            <i class="right arrow icon"></i>
+              전송
+          </button>
+        </div>
+        {{/if}}
+        {{#if gameStage "start"}}
+        <div class="field prize-share">
+          <div class="ui error small message">
+            입력된 상품이 없습니다.
+          </div>
+          <div class="ui pointing below red basic label">
+            오른쪽 사다리 아래 상품을 하나 이상 입력 후 전송 버튼을 눌러주세요.
+          </div>
+          <button class="ui right labeled icon positive button">
+            <i class="right arrow icon"></i>
+              전송
+          </button>
+        </div>
+        {{/if}}
+        {{#if gameStage "started"}}
+        <div class="field sadari-game-started">
+        </div>
+        {{/if}}
+        {{#if gameStage "end"}}
+        <div class="field sadari-game-end">
+        </div>
+        {{/if}}
+      {{/if}}
+    {{/if}}
+  </form>
+</template>

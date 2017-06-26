@@ -1,0 +1,22 @@
+<template name="sadariMain">
+  {{> yield "sadariTitle"}}
+  {{> yield "sadariInit"}}
+  <!-- <div class="ui hidden divider"></div> -->
+  {{! > adsSadariMain}}
+  <div class="ui hidden divider"></div>
+  {{#if connected}}
+    {{> yield "sadariRooms"}}
+  {{else}}
+    <div class="ui icon message">
+      <i class="notched circle loading icon"></i>
+      <div class="content">
+        <div class="header">
+          재접속 중...
+        </div>
+        <p>서버와의 연결이 끊겨 다시 접속을 시도하고 있습니다.</p>
+      </div>
+    </div>
+  {{/if}}
+  {{> sadariIdleSiteLeave}}
+  {{> sadariIdleRoomLeave}}
+</template>
