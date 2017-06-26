@@ -16,12 +16,12 @@ if(Meteor.isClient){
         'description': '직장인, 학생, 친구, 남녀노소 누구나 쉽고 재미있게 즐기는 실시간 사다리 게임'
       },
       og: {
-        'url'  : 'http://sadari.club',
-        'image': 'http://sadari.club/images/sadari.png',
+        'url'  : 'http://sadari.hwangc.com',
+        'image': 'http://sadari.hwangc.com/images/sadari.png',
         'type' : 'website'
       },
       twitter: {
-        'url'  : 'http://sadari.club'
+        'url'  : 'http://sadari.hwangc.com'
       }
     });
   });
